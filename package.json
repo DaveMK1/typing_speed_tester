@@ -1,0 +1,23 @@
+{
+  "name": "typing_speed_tester",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/DaveMK1/typing_speed_tester.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaveMK1/typing_speed_tester/issues"
+  },
+  "homepage": "https://github.com/DaveMK1/typing_speed_tester#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

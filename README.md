@@ -10,6 +10,7 @@ This project is a simple Typing Speed Tester application built with HTML, CSS, a
 
 ## Project Overview
 The Typing Speed Tester application allows users to test their typing speed by typing a given sentence as quickly and accurately as possible. The application calculates the user's words per minute (WPM) and accuracy.
+This was hosted on vercel
 
 ## Features
 - Displays a sentence for the user to type

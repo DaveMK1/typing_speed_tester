@@ -1,6 +1,7 @@
 # Typing Speed Tester
 
 This project is a simple Typing Speed Tester application built with HTML, CSS, and JavaScript, and served using Node.js and Express.
+
 This was hosted on vercel
 
 ## Table of Contents

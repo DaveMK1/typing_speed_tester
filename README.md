@@ -27,7 +27,7 @@ This was hosted on vercel
 ### Steps
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/typing_speed_tester.git
+    git clone https://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@github.com/DaveMK1/typing_speed_tester.git
     ```
 
 2. Navigate to the project directory:

@@ -1,9 +1,9 @@
 let startTime;
 let endTime;
 let timer;
+const textToType = "I took to my heels when the brown dog began to bark.";
 
 function startTest() {
-	const textToType = document.getElementById("text-to-type").innerText;
 	const userInput = document.getElementById("user-input");
 	userInput.value = "";
 	userInput.disabled = false;
@@ -19,6 +19,7 @@ function startTest() {
 			endTime = new Date().getTime();
 			const timeTaken = (endTime - startTime) / 1000; // in seconds
 			calculateResults(textToType, userInput.value, timeTaken);
+			userInput.disabled = true; // Disable the text area after completion
 		}
 	}, 100);
 }

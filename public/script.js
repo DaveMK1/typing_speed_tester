@@ -1,58 +1,36 @@
-document.getElementById("startButton").addEventListener("click", startTest);
-
-let startTime;
-let endTime;
-let timer;
-const textToType = "I took to my heels when the brown dog began to bark.";
-
+// Define the quote that the user needs to type
+const quote = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+// Get the necessary elements from the DOM
+const quoteElement = document.getElementById("quote");
+const inputElement = document.getElementById("input");
+const startButton = document.getElementById("startButton");
+const resultElement = document.getElementById("result");
+// Function to start the typing speed test
 function startTest() {
-	console.log("Test started");
-	const userInput = document.getElementById("user-input");
-	userInput.value = "";
-	userInput.disabled = false;
-	userInput.focus();
-	document.getElementById("wpm").innerText = "";
-	document.getElementById("accuracy").innerText = "";
-
-	startTime = new Date().getTime();
-	clearInterval(timer);
-	timer = setInterval(() => {
-		console.log("Checking input...");
-		if (userInput.value === textToType) {
-			console.log("Text matched");
-			clearInterval(timer);
-			endTime = new Date().getTime();
-			const timeTaken = (endTime - startTime) / 1000; // in seconds
-			calculateResults(textToType, userInput.value, timeTaken);
-			userInput.disabled = true; // Disable the text area after completion
-		}
-	}, 100);
+// Clear the previous result
+resultElement.textContent = "";
+// Disable the start button
+startButton.disabled = true;
+// Set the focus to the input element
+inputElement.focus();
+// Store the start time
+const startTime = new Date().getTime();
+// Event listener to check the input against the quote
+inputElement.addEventListener("input", function () {
+const inputText = inputElement.value;
+const quoteText = quoteElement.textContent.trim();
+if (inputText === quoteText
+) {
+// Calculate the typing speed
+const endTime = new Date().getTime();
+const totalTime = (endTime - startTime) / 1000; // in seconds
+const speed = Math.round((quote.length / totalTime) * 60); // in words per minute
+// Calculate accuracy
+const accuracy = Math.round((quote.length / inputText.length) * 100);
+// Display the result
+resultElement.textContent = `Speed: ${speed} WPM | Accuracy: ${accuracy}%`;
 }
-
-function calculateResults(originalText, typedText, timeTaken) {
-	console.log("Calculating results");
-	const wordsTyped = typedText.split(" ").length;
-	console.log("Words typed:", wordsTyped);
-	const wpm = Math.round((wordsTyped / timeTaken) * 60);
-	console.log("WPM:", wpm);
-	const accuracy = calculateAccuracy(originalText, typedText);
-	console.log("Accuracy:", accuracy);
-
-	document.getElementById("wpm").innerText = wpm;
-	document.getElementById("accuracy").innerText = accuracy;
+});
 }
-
-function calculateAccuracy(originalText, typedText) {
-	console.log("Calculating accuracy");
-	const originalWords = originalText.split(" ");
-	const typedWords = typedText.split(" ");
-	let correctWords = 0;
-
-	originalWords.forEach((word, index) => {
-		if (word === typedWords[index]) {
-			correctWords++;
-		}
-	});
-
-	return Math.round((correctWords / originalWords.length) * 100);
-}
+// Event listener for the start button
+startButton.addEventListener("click", startTest);

@@ -45,6 +45,12 @@ function checkInput() {
     // Get the trimmed quote text
     const quoteText = quote.trim();
 
+    // Calculate typing accuracy
+    const accuracy = Math.round((quote.length / inputText.length) * 100);
+
+    // Update the accuracy element with the current accuracy
+    accuracyElement.textContent = accuracy;
+
     // Check if the typed text matches the quote
     if (inputText === quoteText) {
         // Record the end time
@@ -54,12 +60,8 @@ function checkInput() {
         // Calculate typing speed in words per minute
         const speed = Math.round((quote.length / totalTime) * 60); // in words per minute
 
-        // Calculate typing accuracy
-        const accuracy = Math.round((quote.length / inputText.length) * 100);
-
-        // Display the results
+        // Display the final results
         wpmElement.textContent = speed;
-        accuracyElement.textContent = accuracy;
         resultElement.style.display = "block";
 
         // Disable the input field and enable the start button
@@ -84,4 +86,3 @@ function updateSpeed() {
 
 // Event listener for the start button to initiate the test
 startButton.addEventListener("click", startTest);
-

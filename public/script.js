@@ -17,8 +17,8 @@ let speedInterval;
 function startTest() {
     // Hide previous results and clear WPM and accuracy display
     resultElement.style.display = "none";
-    wpmElement.textContent = "";
-    accuracyElement.textContent = "";
+    wpmElement.textContent = "0";
+    accuracyElement.textContent = "100%";
 
     // Disable the start button to prevent multiple clicks
     startButton.disabled = true;
@@ -34,7 +34,7 @@ function startTest() {
     // Set interval to update typing speed every 200ms
     speedInterval = setInterval(updateSpeed, 200);
 
-    // Event listener to check the input against the quote
+    // Add the input event listener to check the input against the quote
     inputElement.addEventListener("input", checkInput);
 }
 
@@ -46,10 +46,11 @@ function checkInput() {
     const quoteText = quote.trim();
 
     // Calculate typing accuracy
-    const accuracy = Math.round((quote.length / inputText.length) * 100);
+    const correctChars = inputText.split('').filter((char, idx) => char === quoteText[idx]).length;
+    const accuracy = Math.round((correctChars / quoteText.length) * 100);
 
     // Update the accuracy element with the current accuracy
-    accuracyElement.textContent = accuracy;
+    accuracyElement.textContent = accuracy + "%";
 
     // Check if the typed text matches the quote
     if (inputText === quoteText) {
@@ -58,7 +59,7 @@ function checkInput() {
         // Calculate the total time taken in seconds
         const totalTime = (endTime - startTime) / 1000; // in seconds
         // Calculate typing speed in words per minute
-        const speed = Math.round((quote.length / totalTime) * 60); // in words per minute
+        const speed = Math.round((quote.length / 5) / (totalTime / 60)); // in words per minute
 
         // Display the final results
         wpmElement.textContent = speed;
@@ -70,6 +71,9 @@ function checkInput() {
 
         // Clear the speed interval
         clearInterval(speedInterval);
+
+        // Remove the input event listener
+        inputElement.removeEventListener("input", checkInput);
     }
 }
 

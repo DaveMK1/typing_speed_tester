@@ -1,50 +1,84 @@
+/* General body styling */
 body {
+	/* Use a clean, sans-serif font */
 	font-family: Arial, sans-serif;
+	/* Center the content horizontally and vertically */
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	/* Full height of the viewport */
 	height: 100vh;
+	/* Remove default margin */
 	margin: 0;
+	/* Light grey background color */
 	background-color: #f0f0f0;
 }
 
+/* Main container styling */
 .container {
+	/* Center the text */
 	text-align: center;
+	/* White background for the container */
 	background-color: #ffffff;
+	/* Padding inside the container */
 	padding: 20px;
+	/* Rounded corners */
 	border-radius: 8px;
+	/* Light shadow effect */
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Styling for the quote text */
 #text-to-type {
+	/* Medium font size */
 	font-size: 18px;
+	/* Space below the text */
 	margin-bottom: 20px;
 }
 
+/* Styling for the user input textarea */
 #user-input {
+	/* Full width of the container */
 	width: 100%;
+	/* Height of the textarea */
 	height: 100px;
+	/* Space below the textarea */
 	margin-bottom: 20px;
+	/* Font size of the input text */
 	font-size: 16px;
+	/* Padding inside the textarea */
 	padding: 10px;
+	/* Border styling */
 	border: 1px solid #ccc;
+	/* Rounded corners */
 	border-radius: 4px;
 }
 
+/* Styling for the start button */
 button {
+	/* Padding inside the button */
 	padding: 10px 20px;
+	/* Font size of the button text */
 	font-size: 16px;
+	/* Blue background color */
 	background-color: #007bff;
+	/* White text color */
 	color: #ffffff;
+	/* Remove border */
 	border: none;
+	/* Rounded corners */
 	border-radius: 4px;
+	/* Pointer cursor on hover */
 	cursor: pointer;
 }
 
+/* Change background color of button on hover */
 button:hover {
 	background-color: #0056b3;
 }
 
+/* Styling for the results section */
 #results {
+	/* Space above the results */
 	margin-top: 20px;
 }

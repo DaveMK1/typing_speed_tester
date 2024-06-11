@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- Meta tags for character encoding and responsive design -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Title of the application -->
 	<title>Typing Speed Tester</title>
+	<!-- Link to the stylesheet -->
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<!-- Main container for the application -->
 	<div class="container">
+		<!-- Heading of the application -->
 		<h1>Typing Speed Tester</h1>
+		<!-- Paragraph displaying the quote to be typed -->
 		<p id="text-to-type">I took to my heels when the brown dog began to bark.</p>
+		<!-- Textarea for user input -->
 		<textarea id="user-input" placeholder="Start typing..."></textarea>
+		<!-- Button to start the typing test -->
 		<button id="startButton">Start Test</button>
+		<!-- Div to display the results after the test -->
 		<div id="results">
 			<p>Words per minute: <span id="wpm"></span></p>
 			<p>Accuracy: <span id="accuracy"></span>%</p>
 		</div>
 	</div>
 
+	<!-- Link to the JavaScript file -->
 	<script src="script.js"></script>
 </body>
 </html>

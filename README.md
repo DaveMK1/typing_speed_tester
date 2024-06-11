@@ -47,6 +47,19 @@ The Typing Speed Tester is a simple web application designed to help users test 
 4. Type the displayed sentence as quickly and accurately as you can.
 5. View your typing speed and accuracy results.
 
+## Inspiration and Story
+
+This Typing Speed Tester was inspired by my personal journey to improve my typing efficiency. Over the years, I realized the importance of accurate and fast typing in both professional and personal contexts. This project allowed me to combine my passion for coding with a practical tool that can benefit others. 
+
+The development journey has been both challenging and rewarding. One of the significant challenges I faced was ensuring the accuracy of the WPM and accuracy calculations. By implementing real-time input tracking and precise time measurement, I overcame this challenge and created a reliable typing speed tester.
+
+## Future Plans
+
+In the next iteration, I plan to:
+- Add multiple sentences for variety
+- Implement user authentication to track progress over time
+- Enhance the UI for a more engaging user experience
+
 ## Author
 David Agbesinyale 
 
